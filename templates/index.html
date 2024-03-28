@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Flask App</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script>
+        // Access JSON data in JavaScript
+        var jsonData = {{ json_data | safe }};
+        console.log(jsonData);
+        // Now you can manipulate jsonData using JavaScript
+    </script>
+</head>
+<body>
+    <h1>Flask App</h1>
+    <div id="data"></div>
+    <div id="plot"></div>
+
+    <script>
+        let text = "";
+        document.getElementById("data").innerHTML = JSON.stringify(jsonData);
+    </script>
+    <script src="static/js/plot.js"></script>
+</body>
+</html>
